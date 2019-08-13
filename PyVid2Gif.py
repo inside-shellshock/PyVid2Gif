@@ -12,7 +12,7 @@ def Vid2Gif(PathSrc, Formato):                               # La funzione prend
     try:                                                     # Ciclo Try per gestire le eccezioni
         lettura = imageio.get_reader(PathSrc)                   # 'lettura' si occuperà di ottenere il contenuto del file tramite la funzione get_reader(pathsrc)
         fps = lettura.get_meta_data()['fps']                    # Otterà gli FPS del file input per usarli nel file output
-        convert = imageio.get_writer(outputSrc, fps=fps)        # 'convert' sfrutterà la funzione get_writer(videoSrc, fps) per convertire il file usando gli stessi fps
+        convert = imageio.get_writer(outputSrc, fps=fps)        # 'convert' sfrutterà la funzione get_writer(videoSrc, fps) per eseguire la conversione.
 
         for frames in lettura:                                  # Loop che si occuperà di prendere tutti i frame del video
             convert.append_data(frames)                         # e di convertirli nel formato finale, .gif in questo caso.
